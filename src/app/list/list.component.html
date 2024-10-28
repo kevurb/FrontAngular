@@ -1,0 +1,17 @@
+<div class="col-md-3">
+  <h3>Nemos</h3>
+  @if (symbols$ | async; as symbolsList) {
+  <ul class="list-group">
+  @for (symbol of symbolsList; track symbol.symbol) {
+    <button
+    class="list-group-item"
+    (click)="getPricesBySymbol(symbol.symbol)"
+    >
+      {{symbol.symbol}}
+
+      </button>
+  }
+
+  </ul>
+}
+</div>
