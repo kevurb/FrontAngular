@@ -1,6 +1,7 @@
 # GsgInterfaz
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.10.
+This project w![Screenshot_2](https://github.com/user-attachments/assets/00a09790-cdb6-426c-94b1-350451e793e4)
+as generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.10.
 
 ## Development server
 
