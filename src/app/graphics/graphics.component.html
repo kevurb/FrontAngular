@@ -1,10 +1,5 @@
-
 <div>
   <h2>Gráfica de Línea</h2>
-
-  @for (item of historical.historical; track $index) {
-    <div>
-      {{item.date}}
-    </div>
-  }
+  <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions">
+  </highcharts-chart>
 </div>

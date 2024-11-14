@@ -1,19 +1,21 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-3" style="width: 50hv;">
-    <!-- Sección Nemos -->
-    <app-lista (symbolSelect)="setSymbol($event)"></app-lista>
+    <div class="col-md-3" style="width: 50hv">
+      <!-- Sección Nemos -->
+      <app-lista (symbolSelect)="setSymbol($event)"></app-lista>
     </div>
     <div class="col-md-9">
       <div class="row">
-        <div class="col-12" style="height: 300px; overflow-y: auto;">
-        <app-table [symbol]="symbol" (sendData)="setData($event)" ></app-table>
+        <div class="col-12" style="height: 280px; overflow-y: auto">
+          <app-table [symbol]="symbol" (sendData)="setData($event)"></app-table>
         </div>
-        <div class="col-12" style="height: calc(100vh - 300px);">
-          <app-graphics [historical]="historical"></app-graphics>
+        <div class="col-12" style="height: calc(100vh - 300px)">
+          <app-graphics
+            [symbol]="symbol"
+            [historical]="historical"
+          ></app-graphics>
         </div>
       </div>
     </div>
-
   </div>
 </div>

@@ -12,12 +12,12 @@ import { Historical } from '../core/models/historical.model';
   templateUrl: './table.component.html',
   styleUrl: './table.component.css'
 })
-export class TableComponent implements OnInit{
+export class TableComponent implements OnInit {
   @Output() sendData = new EventEmitter<Historical>();
-  @Input() symbol:string = '';
+  @Input() symbol: string = '';
 
   historicalData$ !: Observable<Historical>
-  constructor(private historicalService: HistoricalService) {}
+  constructor(private historicalService: HistoricalService) { }
   ngOnInit(): void {
     //this.historicalData$ = this.historicalService.getHistorical()
   }
@@ -25,10 +25,10 @@ export class TableComponent implements OnInit{
     const newValue = changes['symbol'].currentValue
     this.getHistoricalBySymbol(newValue)
   }
-  getHistoricalBySymbol(symbol : string){
+  getHistoricalBySymbol(symbol: string) {
     this.historicalData$ = this.historicalService.getHistoricalBySymbol(symbol)
-    this.historicalData$.subscribe((data)=>{
-      console.log("hayyyy",data);
+    this.historicalData$.subscribe((data) => {
+      //console.log("hayyyy", data);
       this.sendData.emit(data)
     })
 

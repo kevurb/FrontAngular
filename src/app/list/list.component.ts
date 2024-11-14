@@ -10,20 +10,19 @@ import { Symbol } from '../core/models/symbol.model';
   templateUrl: './list.component.html',
   styleUrl: './list.component.css'
 })
-export class ListComponent implements OnInit{
+export class ListComponent implements OnInit {
   @Output() symbolSelect = new EventEmitter<string>();
   symbols$ !: Observable<Symbol[]>
   // singleSymbol$ !: Observable<Symbol>
- constructor(private symbolsService: SymbolsService) {}
+  constructor(private symbolsService: SymbolsService) { }
 
- ngOnInit(): void {
-   this.symbols$= this.symbolsService.getSymbols()
- }
+  ngOnInit(): void {
+    this.symbols$ = this.symbolsService.getSymbols()
+  }
 
- getPricesBySymbol(symbol:string){
-  // this.singleSymbol$ = this.symbolsService.getSybolsBySymbol(symbol)
-  this.symbolSelect.emit(symbol);
- }
-
+  getPricesBySymbol(symbol: string) {
+    // this.singleSymbol$ = this.symbolsService.getSybolsBySymbol(symbol)
+    this.symbolSelect.emit(symbol);
+  }
 
 }
